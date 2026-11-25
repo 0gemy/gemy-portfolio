@@ -241,6 +241,19 @@
     draw();
   })();
 
+  // CV download (file is stored as two base64 text parts, rebuilt into a PDF in the browser)
+  $$('[data-cv]').forEach(function(a){a.addEventListener('click',function(e){
+    e.preventDefault();
+    Promise.all(['cv-a.txt','cv-b.txt'].map(function(u){return fetch(u).then(function(r){if(!r.ok)throw 0;return r.text()})}))
+      .then(function(p){
+        var s=atob(p.join('').replace(/\s/g,'')),u=new Uint8Array(s.length);
+        for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i);
+        var url=URL.createObjectURL(new Blob([u],{type:'application/pdf'})),l=document.createElement('a');
+        l.href=url;l.download='Gamal-Mohamed-CV.pdf';document.body.appendChild(l);l.click();l.remove();
+        setTimeout(function(){URL.revokeObjectURL(url)},4000);
+      }).catch(function(){window.open('mailto:gemy1gg@gmail.com?subject=CV request')});
+  })});
+
   // apply saved language (skip work for default English on first paint)
   applyLang(lang);
 })();
