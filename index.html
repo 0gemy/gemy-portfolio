@@ -2,16 +2,19 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8" />
+<script>try{if(localStorage.getItem("gemy-lang")==="ar"){document.documentElement.lang="ar";document.documentElement.dir="rtl"}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Gamal Mohamed (GEMY) | Front-End Developer</title>
 <meta name="description" content="GEMY | Front-End Developer specializing in HTML, CSS, JavaScript, Bootstrap and React. Explore my portfolio." />
 <meta name="author" content="Gamal Mohamed" />
-<meta name="theme-color" content="#2563EB" />
+<meta name="theme-color" content="#07060F" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Gamal Mohamed (GEMY) | Front-End Developer" />
 <meta property="og:description" content="Front-End Developer building fast, clean, responsive interfaces with HTML, CSS, JavaScript and React." />
-<meta property="og:image" content="p-restaurant.jpg" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563EB'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E" />
+<meta property="og:image" content="https://0gemy.github.io/gemy-portfolio/p-restaurant.jpg" />
+<meta property="og:url" content="https://0gemy.github.io/gemy-portfolio/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%238B5CF6'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Outfit:wght@400;500;600&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -19,6 +22,8 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
+<div class="preloader" id="pre" aria-hidden="true"><div><b>GEMY.</b><i></i></div></div>
 <div id="progress"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
 
@@ -39,6 +44,7 @@
 <main id="top">
 <!-- HERO -->
 <section class="hero" id="hero">
+  <canvas id="fx" aria-hidden="true"></canvas>
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="grid-bg" aria-hidden="true"></div>
 
@@ -62,23 +68,18 @@
     <div class="cta">
       <a href="#projects" class="btn primary" data-i18n="hero.cta1">View Projects <b>→</b></a>
       <a href="#contact" class="btn ghost" data-i18n="hero.cta2">Contact Me</a>
+      <a href="cv.pdf" class="btn ghost" download="Gamal-Mohamed-CV.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i><span data-i18n="cv.btn">Download CV</span></a>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="stat"><strong data-count="1">0</strong><sup>+</sup><span data-i18n="hero.s1">Years Experience</span></div>
-    <div class="stat"><strong data-count="10">0</strong><sup>+</sup><span data-i18n="hero.s2">Happy Clients</span></div>
-    <div class="stat"><strong data-count="100">0</strong><sup>%</sup><span data-i18n="hero.s3">Client Satisfaction</span></div>
+    <div class="stat"><strong data-count="3">0</strong><sup></sup><span data-i18n="hero.s2">Live Projects</span></div>
+    <div class="stat"><strong data-count="5">0</strong><sup></sup><span data-i18n="hero.s3">Core Technologies</span></div>
   </div>
 
   <a href="#about" class="scroll-hint" aria-label="Scroll down"><i></i></a>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true"><div class="track">
-  <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span><span>Responsive</span><span>UI / UX</span><span>Pixel-perfect</span>
-  <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span><span>Responsive</span><span>UI / UX</span><span>Pixel-perfect</span>
-</div></div>
 
 <!-- ABOUT -->
 <section id="about" class="sec">
@@ -93,11 +94,12 @@
         <li><b>03</b><div><strong data-i18n="about.f3t">Code Quality</strong><span data-i18n="about.f3d">Clean, modular, and maintainable code structure.</span></div></li>
       </ul>
       <p class="muted" data-i18n="about.muted">I am driven by the challenge of bringing UI/UX concepts to life precisely as envisioned.</p>
+      <a href="cv.pdf" class="btn primary small" download="Gamal-Mohamed-CV.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i><span data-i18n="cv.btn">Download CV</span></a>
     </div>
     <div class="about-cards reveal d2">
-      <div class="num-card"><strong data-count="1">0</strong><sup>+</sup><span data-i18n="about.c1">Years Experience</span></div>
-      <div class="num-card alt"><strong data-count="10">0</strong><sup>+</sup><span data-i18n="about.c2">Happy Clients</span></div>
-      <div class="num-card wide"><strong data-count="5">0</strong><sup>+</sup><span data-i18n="about.c3">Certifications</span></div>
+      <div class="info-card"><i class="fa-solid fa-code" aria-hidden="true"></i><div><strong data-i18n="about.c1t">Front-End &amp; React</strong><span data-i18n="about.c1d">Clean, responsive interfaces</span></div></div>
+      <div class="info-card"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><div><strong data-i18n="about.c2t">B.Sc. Information Systems</strong><span data-i18n="about.c2d">Class of 2026</span></div></div>
+      <div class="info-card"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><div><strong><span class="dot"></span><span data-i18n="about.c3t">Available for work</span></strong><span data-i18n="about.c3d">Freelance and full-time</span></div></div>
     </div>
   </div>
 </section>
@@ -108,11 +110,11 @@
     <div class="head reveal"><span class="tag light" data-i18n="skills.tag">What I know</span><h2 data-i18n="skills.h2">My <em>Tools</em></h2>
       <p data-i18n="skills.p">Technologies and tools I've mastered to build exceptional digital experiences</p></div>
     <div class="skills">
-      <div class="skill reveal"><div class="ring" style="--p:95"><b>95%</b></div><h3>HTML5</h3></div>
-      <div class="skill reveal d1"><div class="ring" style="--p:92"><b>92%</b></div><h3>CSS3</h3></div>
-      <div class="skill reveal d2"><div class="ring" style="--p:88"><b>88%</b></div><h3>JavaScript</h3></div>
-      <div class="skill reveal d3"><div class="ring" style="--p:90"><b>90%</b></div><h3>Bootstrap</h3></div>
-      <div class="skill reveal d4"><div class="ring" style="--p:80"><b>80%</b></div><h3>React.js</h3></div>
+      <div class="skill reveal d0"><i class="fa-brands fa-html5" aria-hidden="true"></i><h3>HTML5</h3></div>
+      <div class="skill reveal d1"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i><h3>CSS3</h3></div>
+      <div class="skill reveal d2"><i class="fa-brands fa-js" aria-hidden="true"></i><h3>JavaScript</h3></div>
+      <div class="skill reveal d3"><i class="fa-brands fa-bootstrap" aria-hidden="true"></i><h3>Bootstrap</h3></div>
+      <div class="skill reveal d4"><i class="fa-brands fa-react" aria-hidden="true"></i><h3>React.js</h3></div>
     </div>
   </div>
 </section>
@@ -128,21 +130,24 @@
         <div class="pbody"><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
           <h3>Restaurant Website</h3>
           <p lang="ar" dir="rtl">مشروع Front-End لموقع مطعم متكامل يتميز بتصميم حديث وقائمة طعام ديناميكية وسلة مشتريات واداء سريع وتجربة مستخدم مميزة </p>
-          <a class="link" href="https://gemy-food-pmce.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="proj.demo2">Live Demo <b>→</b></a></div>
+          <div class="case-wrap"><div class="case-t" data-i18n="proj.case">What it does</div><ul class="case"><li data-i18n="pr1.a"></li><li data-i18n="pr1.b"></li><li data-i18n="pr1.c"></li></ul></div>
+          <div class="plinks"><a class="btn primary small" href="https://gemy-food-pmce.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="proj.demo2">Live Demo <b>→</b></span></a><a class="btn ghost small" href="https://github.com/0gemy/GemyFood" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="proj.code">Code</span></a></div></div>
       </article>
       <article class="proj reveal d1 tilt">
         <a class="shot" href="https://first-aid-six.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="p-firstaid.jpg" alt="Graduation Project preview" loading="lazy" /><span class="open" data-i18n="proj.demo">Live Demo ↗</span></a>
         <div class="pbody"><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
           <h3>Graduation Project</h3>
           <p lang="ar" dir="rtl">منصة الكترونية لتسهيل الوصول الى خدمات الاسعافات الاولية وتسهيل تعلم الاسعافات الاولية تحت مسمى "الصحة والسلامة "</p>
-          <a class="link" href="https://first-aid-six.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="proj.demo2">Live Demo <b>→</b></a></div>
+          <div class="case-wrap"><div class="case-t" data-i18n="proj.case">What it does</div><ul class="case"><li data-i18n="pr2.a"></li><li data-i18n="pr2.b"></li><li data-i18n="pr2.c"></li></ul></div>
+          <div class="plinks"><a class="btn primary small" href="https://first-aid-six.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="proj.demo2">Live Demo <b>→</b></span></a><a class="btn ghost small" href="https://github.com/0gemy/home_page" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="proj.code">Code</span></a></div></div>
       </article>
       <article class="proj reveal d2 tilt">
         <a class="shot" href="https://luxury-motors-flame.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="p-luxury.jpg" alt="Luxury Motors preview" loading="lazy" /><span class="open" data-i18n="proj.demo">Live Demo ↗</span></a>
         <div class="pbody"><div class="tags"><span>JavaScript</span><span>CSS</span><span>HTML</span></div>
           <h3>LUXURY MOTORS</h3>
           <p lang="ar" dir="rtl">موقع لمعرض سيارات يعرض أفضل السيارات الفاخرة مع امكانية المقارنة بين سيارتين</p>
-          <a class="link" href="https://luxury-motors-flame.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="proj.demo2">Live Demo <b>→</b></a></div>
+          <div class="case-wrap"><div class="case-t" data-i18n="proj.case">What it does</div><ul class="case"><li data-i18n="pr3.a"></li><li data-i18n="pr3.b"></li><li data-i18n="pr3.c"></li></ul></div>
+          <div class="plinks"><a class="btn primary small" href="https://luxury-motors-flame.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="proj.demo2">Live Demo <b>→</b></span></a><a class="btn ghost small" href="https://github.com/0gemy/Luxury-Motors" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="proj.code">Code</span></a></div></div>
       </article>
     </div>
   </div>
@@ -154,9 +159,9 @@
     <div class="head reveal"><span class="tag" data-i18n="edu.tag">My education</span><h2 data-i18n="edu.h2">Academic <em>Background</em></h2>
       <p data-i18n="edu.p">My educational journey and qualifications</p></div>
     <div class="edu">
-      <figure class="cert reveal" data-full="c-cambridge.jpg"><img src="c-cambridge.jpg" alt="Information System certificate, Cambridge" loading="lazy" /><figcaption><small>Cambridge</small><h3 data-i18n="edu.c1">Information System</h3><span>2022</span></figcaption></figure>
-      <figure class="cert reveal d1" data-full="c-tsquare.jpg"><img src="c-tsquare.jpg" alt="Course on FrontEnd Developer certificate, T-Square" loading="lazy" /><figcaption><small>T-Square</small><h3 data-i18n="edu.c2">Course On FrontEnd Developer</h3><span>2026</span></figcaption></figure>
-      <figure class="cert reveal d2" data-full="c-degree.jpg"><img src="c-degree.jpg" alt="Bachelor of Information Systems certificate" loading="lazy" /><figcaption><small data-i18n="edu.c3s">Misr Engineering &amp; Technology</small><h3 data-i18n="edu.c3">Bachelor Of Information Systems</h3><span>2026</span></figcaption></figure>
+      <figure class="cert reveal" data-full="c-cambridge.jpg"><div class="imgw"><img src="c-cambridge.jpg" alt="Information System certificate, Cambridge" loading="lazy" /></div><figcaption><small>Cambridge</small><h3 data-i18n="edu.c1">Information System</h3><span class="yr">2022</span></figcaption></figure>
+      <figure class="cert reveal d1" data-full="c-tsquare.jpg"><div class="imgw"><img src="c-tsquare.jpg" alt="Course on FrontEnd Developer certificate, T-Square" loading="lazy" /></div><figcaption><small>T-Square</small><h3 data-i18n="edu.c2">Course On FrontEnd Developer</h3><span class="yr">2026</span></figcaption></figure>
+      <figure class="cert reveal d2" data-full="c-degree.jpg"><div class="imgw"><img src="c-degree.jpg" alt="Bachelor of Information Systems certificate" loading="lazy" /></div><figcaption><small data-i18n="edu.c3s">Misr Engineering &amp; Technology</small><h3 data-i18n="edu.c3">Bachelor Of Information Systems</h3><span class="yr">2026</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -167,12 +172,12 @@
     <div class="head reveal"><span class="tag" data-i18n="svc.tag">What I offer</span><h2 data-i18n="svc.h2">My <em>Services</em></h2>
       <p data-i18n="svc.p">Comprehensive front-end solutions tailored to your unique needs</p></div>
     <div class="services">
-      <div class="svc reveal"><b>01</b><h3 data-i18n="svc.1t">Modern Web Design</h3><p data-i18n="svc.1d">Crafting visually stunning, trend-forward websites that capture attention and deliver memorable first impressions.</p></div>
-      <div class="svc reveal d1"><b>02</b><h3 data-i18n="svc.2t">Front-End Development</h3><p data-i18n="svc.2d">Building robust, scalable front-end architectures with clean, maintainable code and optimal performance.</p></div>
-      <div class="svc reveal d2"><b>03</b><h3 data-i18n="svc.3t">Responsive Design</h3><p data-i18n="svc.3d">Pixel-perfect layouts that look and feel exceptional across all devices, screen sizes, and orientations.</p></div>
-      <div class="svc reveal"><b>04</b><h3 data-i18n="svc.4t">UI/UX Optimization</h3><p data-i18n="svc.4d">Elevating existing interfaces with refined interactions, improved usability, and enhanced visual hierarchy.</p></div>
-      <div class="svc reveal d1"><b>05</b><h3 data-i18n="svc.5t">Landing Page Design</h3><p data-i18n="svc.5d">High-converting, visually compelling landing pages engineered to engage visitors and drive business results.</p></div>
-      <div class="svc reveal d2"><b>06</b><h3 data-i18n="svc.6t">Performance Optimization</h3><p data-i18n="svc.6d">Turbocharging web applications for lightning-fast load times and best-in-class Core Web Vitals scores.</p></div>
+      <div class="svc reveal"><div class="ico"><i class="fa-solid fa-palette" aria-hidden="true"></i></div><h3 data-i18n="svc.1t">Modern Web Design</h3><p data-i18n="svc.1d">Crafting visually stunning, trend-forward websites that capture attention and deliver memorable first impressions.</p></div>
+      <div class="svc reveal d1"><div class="ico"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><h3 data-i18n="svc.2t">Front-End Development</h3><p data-i18n="svc.2d">Building robust, scalable front-end architectures with clean, maintainable code and optimal performance.</p></div>
+      <div class="svc reveal d2"><div class="ico"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div><h3 data-i18n="svc.3t">Responsive Design</h3><p data-i18n="svc.3d">Pixel-perfect layouts that look and feel exceptional across all devices, screen sizes, and orientations.</p></div>
+      <div class="svc reveal"><div class="ico"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div><h3 data-i18n="svc.4t">UI/UX Optimization</h3><p data-i18n="svc.4d">Elevating existing interfaces with refined interactions, improved usability, and enhanced visual hierarchy.</p></div>
+      <div class="svc reveal d1"><div class="ico"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div><h3 data-i18n="svc.5t">Landing Page Design</h3><p data-i18n="svc.5d">High-converting, visually compelling landing pages engineered to engage visitors and drive business results.</p></div>
+      <div class="svc reveal d2"><div class="ico"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div><h3 data-i18n="svc.6t">Performance Optimization</h3><p data-i18n="svc.6d">Turbocharging web applications for lightning-fast load times and best-in-class Core Web Vitals scores.</p></div>
     </div>
   </div>
 </section>
@@ -218,6 +223,7 @@
 </footer>
 
 <div class="lightbox" id="lightbox" hidden><button aria-label="Close">×</button><img alt="" /></div>
+<a class="wa-float" href="https://wa.me/201029806137" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 <a href="#top" id="totop" aria-label="Back to top">↑</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
