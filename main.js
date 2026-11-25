@@ -10,14 +10,18 @@
       'hero.roles':['Front-End Developer','React Developer','UI Builder'],
       'hero.lead':'I build fast, clean and responsive websites that turn designs into real experiences.',
       'hero.cta1':'View Projects <b>→</b>','hero.cta2':'Contact Me',
-      'hero.s1':'Years Experience','hero.s2':'Happy Clients','hero.s3':'Client Satisfaction',
+      'hero.s1':'Years Experience','hero.s2':'Live Projects','hero.s3':'Core Technologies','cv.btn':'Download CV',
       'about.tag':'Get to know me','about.h2':'About <em>me</em>',
       'about.big':"Hi, I'm <strong>Gamal Mohamed, a Frontend Developer</strong> focused on creating functional, accessible, and high-performance web interfaces.",
       'about.f1t':'Core Expertise','about.f1d':'Tech Stack: React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap.',
       'about.f2t':'Design-to-Code Precision','about.f2d':'100% pixel-perfect conversion from any design file to responsive web layouts.',
       'about.f3t':'Code Quality','about.f3d':'Clean, modular, and maintainable code structure.',
       'about.muted':'I am driven by the challenge of bringing UI/UX concepts to life precisely as envisioned.',
-      'about.c1':'Years Experience','about.c2':'Happy Clients','about.c3':'Certifications',
+      'about.c1t':'Front-End & React','about.c1d':'Clean, responsive interfaces','about.c2t':'B.Sc. Information Systems','about.c2d':'Class of 2026','about.c3t':'Available for work','about.c3d':'Freelance and full-time',
+      'proj.case':'What it does','proj.code':'Code',
+      'pr1.a':'Dynamic menu loaded from data','pr1.b':'Working shopping cart','pr1.c':'Fast, responsive layout',
+      'pr2.a':'First-aid guides in simple steps','pr2.b':'Quick access to first-aid services','pr2.c':'Built as a graduation project',
+      'pr3.a':'Showcase of luxury cars','pr3.b':'Compare two cars side by side','pr3.c':'Responsive on every screen',
       'skills.tag':'What I know','skills.h2':'My <em>Tools</em>',
       'skills.p':"Technologies and tools I've mastered to build exceptional digital experiences",
       'proj.tag':'My work','proj.h2':'Recent <em>Projects</em>',
@@ -57,14 +61,18 @@
       'hero.roles':['مطور واجهات أمامية','مطور React','مصمم واجهات مستخدم'],
       'hero.lead':'ببني مواقع سريعة ونظيفة ومتجاوبة بتحوّل التصميمات إلى تجارب حقيقية.',
       'hero.cta1':'شاهد المشاريع <b>←</b>','hero.cta2':'تواصل معي',
-      'hero.s1':'سنوات خبرة','hero.s2':'عميل سعيد','hero.s3':'رضا العملاء',
+      'hero.s1':'سنوات خبرة','hero.s2':'مشاريع منشورة','hero.s3':'تقنيات أساسية','cv.btn':'تحميل السيرة الذاتية',
       'about.tag':'تعرّف عليّ','about.h2':'نبذة <em>عني</em>',
       'about.big':'أهلاً، أنا <strong>جمال محمد، مطور واجهات أمامية</strong> متخصص في بناء واجهات ويب عملية وسهلة الوصول وعالية الأداء.',
-      'about.f1t':'الخبرة الأساسية','about.f1d':'التقنيات: React.js وJavaScript ‏(ES6+)‏ وHTML5 وCSS3 وBootstrap.',
+      'about.f1t':'الخبرة الأساسية','about.f1d':'التقنيات: React.js، JavaScript (ES6+)، HTML5، CSS3، Bootstrap.',
       'about.f2t':'دقة تحويل التصميم إلى كود','about.f2d':'تحويل أي ملف تصميم إلى صفحات ويب متجاوبة بدقة بكسل مثالية 100%.',
       'about.f3t':'جودة الكود','about.f3d':'كود نظيف ومنظم وسهل الصيانة والتطوير.',
       'about.muted':'يدفعني التحدي في تحويل أفكار UI/UX إلى واقع تماماً كما تم تصورها.',
-      'about.c1':'سنوات خبرة','about.c2':'عميل سعيد','about.c3':'شهادات معتمدة',
+      'about.c1t':'واجهات أمامية و React','about.c1d':'واجهات نظيفة ومتجاوبة','about.c2t':'بكالوريوس نظم المعلومات','about.c2d':'دفعة 2026','about.c3t':'متاح للعمل','about.c3d':'فريلانس ودوام كامل',
+      'proj.case':'بيعمل إيه','proj.code':'الكود',
+      'pr1.a':'قائمة طعام ديناميكية من بيانات','pr1.b':'سلة مشتريات شغالة','pr1.c':'تصميم سريع ومتجاوب',
+      'pr2.a':'إرشادات إسعافات أولية بخطوات بسيطة','pr2.b':'وصول سريع لخدمات الإسعاف','pr2.c':'اتعمل كمشروع تخرج',
+      'pr3.a':'عرض أفضل السيارات الفاخرة','pr3.b':'مقارنة بين سيارتين جنب بعض','pr3.c':'متجاوب على كل الشاشات',
       'skills.tag':'ماذا أعرف','skills.h2':'أدواتي <em>التقنية</em>',
       'skills.p':'التقنيات والأدوات التي أتقنها لبناء تجارب رقمية استثنائية',
       'proj.tag':'أعمالي','proj.h2':'أحدث <em>المشاريع</em>',
@@ -99,6 +107,7 @@
     }
   };
 
+  var links=$('#links');
   var lang='en';
   try{lang=localStorage.getItem('gemy-lang')==='ar'?'ar':'en'}catch(e){}
   var langBtn=$('#langBtn');
@@ -108,6 +117,7 @@
     lang=(l==='ar')?'ar':'en';
     try{localStorage.setItem('gemy-lang',lang)}catch(e){}
     var d=I18N[lang];
+    links.style.transition='none';setTimeout(function(){links.style.transition=''},60);
     document.documentElement.lang=lang;
     document.documentElement.dir=lang==='ar'?'rtl':'ltr';
     document.title=d['meta.title'];
@@ -128,7 +138,7 @@
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
   // mobile menu
-  var burger=$('#burger'),links=$('#links');
+  var burger=$('#burger');
   burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
   $$('a',links).forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
 
@@ -202,7 +212,35 @@
       .finally(function(){b.disabled=false;b.innerHTML=old});
   });
 
+  // preloader
+  var pre=$('#pre');
+  function hidePre(){if(pre)pre.classList.add('done')}
+  if(document.readyState==='complete')setTimeout(hidePre,500);else addEventListener('load',function(){setTimeout(hidePre,400)});
+  setTimeout(hidePre,2500);
+
+  // scroll spy
+  var secs=$$('main section[id]'),navA=$$('a[href^="#"]',links);
+  var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navA.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id&&!a.classList.contains('pill'))})}})},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){spy.observe(s)});
+
+  // hero particles (light, skipped for reduced motion)
+  (function(){
+    var c=$('#fx');if(!c||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    var x=c.getContext('2d'),W,H,P=[],dpr=Math.min(devicePixelRatio||1,2),run=true;
+    function size(){W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+      var n=W<700?22:46;P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+.6,c:Math.random()<.5?'167,139,250':'34,211,238'})}
+    size();addEventListener('resize',size);
+    new IntersectionObserver(function(e){run=e[0].isIntersecting;if(run)draw()}).observe(c);
+    function draw(){
+      if(!run)return;x.clearRect(0,0,W,H);
+      for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+        x.fillStyle='rgba('+p.c+',.7)';x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill();
+        for(var k=i+1;k<P.length;k++){var q=P[k],dx=p.x-q.x,dy=p.y-q.y,d=dx*dx+dy*dy;
+          if(d<9000){x.strokeStyle='rgba('+p.c+','+(.18*(1-d/9000))+')';x.lineWidth=1;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}}
+      requestAnimationFrame(draw)}
+    draw();
+  })();
+
   // apply saved language (skip work for default English on first paint)
-  if(lang==='ar')applyLang('ar');
-  else{langBtn.querySelector('span').textContent=I18N.en['lang.btn']}
+  applyLang(lang);
 })();
