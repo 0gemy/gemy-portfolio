@@ -82,7 +82,7 @@ h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.15}
 @keyframes rise{from{opacity:0;transform:translateX(-50%) translateY(80px)}to{opacity:1;transform:translateX(-50%)}}
 .chip{position:absolute;background:rgba(18,16,40,.75);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-weight:600;font-size:.9rem;color:var(--cyan2);
   box-shadow:var(--shadow);animation:float 5s ease-in-out infinite;pointer-events:auto}
-.c1{left:14%;top:46%}.c2{right:13%;top:40%;animation-delay:-1.5s}.c3{left:22%;top:68%;animation-delay:-3s}.c4{right:20%;top:63%;animation-delay:-2s}
+.c1{left:14%;top:46%}.c2{right:13%;top:40%;animation-delay:-1.5s}.c3{left:30%;top:72%;animation-delay:-3s}.c4{right:20%;top:63%;animation-delay:-2s}
 @keyframes float{50%{transform:translateY(-14px)}}
 
 .hero-left,.hero-right{position:relative;z-index:3;padding-bottom:20px}
@@ -289,3 +289,5 @@ h2 em{font-style:normal;background:linear-gradient(90deg,#A78BFA,#22D3EE,#A78BFA
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none;filter:none}.preloader{display:none}#fx{display:none}}
 .case-wrap{flex:1}
+
+@media (max-width:640px){.wa-float{width:46px;height:46px;font-size:1.4rem;bottom:14px}#totop{bottom:14px;width:42px;height:42px}}
